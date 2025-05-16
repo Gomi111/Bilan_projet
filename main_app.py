@@ -95,6 +95,16 @@ def valider():
     except Exception as e:
         messagebox.showerror("Erreur", str(e))
 
+#fonction d'exporter en PDF
+from pdf_generator import generate_pdf_from_db
+
+def exporter_pdf():
+    success = generate_pdf_from_db()
+    if success:
+        messagebox.showinfo("PDF", "Le PDF du jour a été généré avec succès.")
+    else:
+        messagebox.showwarning("Aucune donnée", "Aucune donnée saisie aujourd’hui.")
+
 # Bouton Valider
 tk.Button(frame_content, text="VALIDER", command=valider, bg="green", fg="white", font=("Helvetica", 12, "bold")).pack(pady=30)
 

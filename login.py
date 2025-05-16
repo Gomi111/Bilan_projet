@@ -15,7 +15,7 @@ def verify_login():
 
     if result:
         root.destroy()
-        main_app.open_main_app()  # Appeler l'interface principale
+        main_app.start_main_app()  # Changed from open_main_app() to start_main_app()
     else:
         messagebox.showerror("Erreur", "Nom d'utilisateur ou mot de passe incorrect")
 

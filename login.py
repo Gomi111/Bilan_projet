@@ -15,27 +15,39 @@ def verify_login():
 
     if result:
         root.destroy()
-        main_app.start_main_app()  # Changed from open_main_app() to start_main_app()
+        main_app.start_main_app()
     else:
         messagebox.showerror("Erreur", "Nom d'utilisateur ou mot de passe incorrect")
 
 # Fenêtre de login
 root = tk.Tk()
-root.title(" BilanPLUS")
-root.geometry("300x200")
+root.title("BilanPLUS")
+root.geometry("360x250")
+root.configure(bg="#0D1B2A")
 
-label_title = tk.Label(root, text="BilanPLUS", font=("Arial", 16))
-label_title.pack(pady=10)
+# Titre
+label_title = tk.Label(root, text="BilanPLUS", font=("Helvetica", 18, "bold"),
+                       fg="white", bg="#0D1B2A")
+label_title.pack(pady=15)
 
-tk.Label(root, text="Nom d'utilisateur").pack()
-entry_username = tk.Entry(root)
-entry_username.pack()
+# Zone de saisie Nom d'utilisateur
+label_username = tk.Label(root, text="Nom d'utilisateur", font=("Helvetica", 10),
+                          fg="white", bg="#0D1B2A")
+label_username.pack()
+entry_username = tk.Entry(root, font=("Helvetica", 10), bg="white", relief="flat", width=25)
+entry_username.pack(pady=5)
 
-tk.Label(root, text="Mot de passe").pack()
-entry_password = tk.Entry(root, show="*")
-entry_password.pack()
+# Zone de saisie Mot de passe
+label_password = tk.Label(root, text="Mot de passe", font=("Helvetica", 10),
+                          fg="white", bg="#0D1B2A")
+label_password.pack()
+entry_password = tk.Entry(root, show="*", font=("Helvetica", 10), bg="white", relief="flat", width=25)
+entry_password.pack(pady=5)
 
-btn_login = tk.Button(root, text="Se connecter", command=verify_login)
-btn_login.pack(pady=10)
+# Bouton Se connecter
+btn_login = tk.Button(root, text="Se connecter", command=verify_login,
+                      bg="#1B998B", fg="white", font=("Helvetica", 10, "bold"),
+                      activebackground="#14746F", relief="flat", width=20)
+btn_login.pack(pady=20)
 
 root.mainloop()

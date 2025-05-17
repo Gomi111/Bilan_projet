@@ -21,7 +21,7 @@ def verify_login():
 
 # Fenêtre de login
 root = tk.Tk()
-root.title("Connexion - BilanPLUS")
+root.title(" BilanPLUS")
 root.geometry("300x200")
 
 label_title = tk.Label(root, text="BilanPLUS", font=("Arial", 16))
